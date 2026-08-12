@@ -1,22 +1,22 @@
 import java.util.*;
-
-public class Main {
+import java.util.stream.*;
+public class PSTJTASK1 {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
+        int N = sc.nextInt();
 
         List<Integer> salaries = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < N; i++) {
             salaries.add(sc.nextInt());
         }
 
-        salaries.stream()
-                .map(salary -> salary + salary / 10)
-                .forEach(salary -> System.out.print(salary + " "));
+        // Functional transformation: increase each salary by 10%
+        List<Integer> updatedSalaries = salaries.stream()
+                .map(salary -> (int)(salary * 2))   // increase by 10%
+                .collect(Collectors.toList());
 
-        sc.close();
+        // Print updated salaries
+        updatedSalaries.forEach(sal -> System.out.print(sal + " "));
     }
 }
