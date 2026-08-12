@@ -9,7 +9,7 @@ public class PSTJTASK1 {
             salaries.add(sc.nextInt());
         }
         List<Integer> updatedSalaries = salaries.stream()
-                .map(salary -> (int)(salary * 2))   // increase by 10%
+                .map(salary -> (int)(salary * 2))   
                 .collect(Collectors.toList());
         updatedSalaries.forEach(sal -> System.out.print(sal + " "));
     }
